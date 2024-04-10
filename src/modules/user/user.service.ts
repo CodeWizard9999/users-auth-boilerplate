@@ -73,7 +73,7 @@ export class UserService {
     const { id } = updateUserPasswordDto;
     const user = await this.userRepository.getUserById(id);
 
-    if (user) throw new NotFoundException('User not found.');
+    if (!user) throw new NotFoundException('User not found.');
 
     const password = await hashPassword(updateUserPasswordDto.password);
 
