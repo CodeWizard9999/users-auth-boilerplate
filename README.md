@@ -1,7 +1,7 @@
 ## Running the app
 
-# node version: 16.18.1
-# npm version: 8.19.2
+# node version: 20.12.1
+# npm version: 10.5.0
 
 
 ```bash
