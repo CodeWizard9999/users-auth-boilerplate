@@ -11,6 +11,7 @@ import {
   UseGuards,
   UseInterceptors,
   Body,
+  Patch,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { FileInterceptor } from '@nestjs/platform-express';
@@ -51,7 +52,7 @@ export class UserController {
 
   @Roles(UserRole.ADMIN)
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Post()
+  @Patch()
   public async updateUserPassword(
     @Body() updateUserPasswordDto: UpdateUserPasswordDto,
   ): Promise<string> {
